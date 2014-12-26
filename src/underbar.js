@@ -94,6 +94,10 @@
   _.reject = function(collection, test) {
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
+    var passedArray = _.filter(collection, test);
+    return _.filter(collection, function(element) {
+      return _.indexOf(passedArray, element) === -1;
+    });
   };
 
   // Produce a duplicate-free version of the array.
