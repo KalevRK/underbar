@@ -102,6 +102,16 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array) {
+    var tempArray = [];
+    return _.filter(array, function(element) {
+      if (_.indexOf(tempArray, element) === -1) {
+        tempArray.push(element);
+        return true;
+      }
+      else {
+        return false;
+      }
+    });
   };
 
 
